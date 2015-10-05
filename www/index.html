@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <title></title>
@@ -24,20 +24,75 @@
     <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
-  </head>
-  <body ng-app="starter">
-    <!--
-      The nav bar that will be updated as we navigate between views.
-    -->
-    <ion-nav-bar class="bar-stable">
-      <ion-nav-back-button>
-      </ion-nav-back-button>
-    </ion-nav-bar>
-    <!--
-      The views will be rendered in the <ion-nav-view> directive below
-      Templates are in the /templates folder (but you could also
-      have templates inline in this html file if you'd like).
-    -->
-    <ion-nav-view></ion-nav-view>
-  </body>
+</head>
+<body ng-app="starter">
+<!--
+  The nav bar that will be updated as we navigate between views.
+-->
+
+<ion-side-menus>
+
+    <ion-side-menu-content ng-controller="DashCtrl">
+        <ion-nav-bar class="bar-positive">
+            <ion-nav-back-button class="button-icon ion-arrow-left-c">
+            </ion-nav-back-button>
+
+            <!--<ion-nav-buttons side="left">-->
+            <!--<button class="button button-icon button-clear ion-navicon" ng-click="showMenu()">-->
+            <!--</button>-->
+            <!--</ion-nav-buttons>-->
+
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-gear-b" ng-click="showRightMenu()">
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view animation="slide-left-right"></ion-nav-view>
+    </ion-side-menu-content>
+
+
+    <ion-side-menu side="right">
+        <ion-header-bar class="bar bar-header bar-dark">
+            <h1 class="title">Setting</h1>
+        </ion-header-bar>
+        <ion-content>
+
+            <ion-list>
+                <ion-item class="item item-divider">Notification</ion-item>
+                <ion-toggle ng-model="settings.confirmOrder">
+                    Confirm order
+                </ion-toggle>
+                <ion-toggle ng-model="settings.cancelOrder">
+                    Cancel Order
+                </ion-toggle>
+                <ion-toggle ng-model="settings.msgProvider">
+                    Provider
+                </ion-toggle>
+                <ion-item class="item item-divider">Notification Repeat</ion-item>
+                <ion-toggle ng-model="settings.msgRepeat">
+                    Repeat
+                </ion-toggle>
+                <div class="list">
+
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Delay Time Repeat
+                        </div>
+                        <select>
+                            <option value="1">1</option>
+                            <option value="3" selected>3</option>
+                            <option value="5">5</option>
+                            <option value="10">10</option>
+                        </select>
+                    </label>
+
+                </div>
+
+            </ion-list>
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>
+
+</body>
 </html>

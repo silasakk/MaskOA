@@ -23,9 +23,23 @@
     {
       "locator": "https://github.com/phonegap/phonegap-plugin-push",
       "id": "phonegap-plugin-push"
+    },
+    {
+      "locator": "https://github.com/katzer/cordova-plugin-local-notifications.git",
+      "id": "de.appplant.cordova.plugin.local-notification"
+    },
+    {
+      "locator": "https://github.com/katzer/cordova-plugin-background-mode.git",
+      "id": "de.appplant.cordova.plugin.background-mode"
+    },
+    "phonegap-plugin-barcodescanner",
+    {
+      "locator": "https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git",
+      "id": "cordova-plugin-inappbrowser"
     }
   ],
   "cordovaPlatforms": [
-    "ios"
+    "ios",
+    "android"
   ]
 }
